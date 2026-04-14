@@ -1,0 +1,206 @@
+/* --- Variáveis do Sistema --- */
+:root {
+    --cor-foco: #4338ca; 
+    --cor-fundo: #fdfaf6; /* Um "creme" ou areia super sutil */
+    --cor-texto: #2d2a26; /* Cinza quente e escuro */
+    --cor-texto-claro: #73706c; /* Cinza quente claro */
+}
+
+
+/* Quando o body tiver a classe .dark-theme, as variáveis mudam */
+body.dark-theme {
+    /* Estilo 3: Dark Mode */
+    --cor-fundo: #121212;
+    --cor-texto: #f1f5f9;
+    --cor-texto-claro: #94a3b8;
+    --cor-foco: #818cf8;
+}
+
+/* --- Estilo do Botão de Tema (Minimalista) --- */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--cor-texto-claro);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; /* Necessário para a linha animada */
+    transition: color 0.3s ease;
+    font-family: inherit; /* Puxa a mesma fonte do menu */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre o ícone e o texto */
+}
+
+.theme-toggle:hover {
+    color: var(--cor-foco);
+}
+
+/* Adicionando a mesma linha animada dos links */
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--cor-foco);
+    transition: width 0.3s ease;
+}
+
+.theme-toggle:hover::after {
+    width: 100%;
+}
+
+/* --- Reset Básico e Fonte --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* --- Estilo do Cabeçalho --- */
+.cabecalho {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 2rem 5%; 
+}
+
+/* --- Estilo da Logo --- */
+.logo a {
+    text-decoration: none;
+    color: var(--cor-texto-claro); /* Usando um cinza mais suave em vez do texto escuro */
+    font-size: 1.2rem; 
+    font-weight: 500; 
+    letter-spacing: normal;
+    transition: color 0.3s ease; 
+}
+
+.logo a:hover {
+    color: var(--cor-foco);
+}
+
+/* --- Estilo do Menu de Navegação --- */
+.menu {
+    list-style: none; 
+    display: flex;
+    gap: 2.5rem; 
+}
+
+/* --- Estilo dos Links do Menu --- */
+.menu a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative; 
+    transition: color 0.3s ease; 
+}
+
+/* Efeito Hover (Mouse em cima) - Cor da fonte */
+.menu a:hover {
+    color: var(--cor-foco); 
+}
+
+/* Criando a linha animada embaixo do link */
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--cor-foco);
+    transition: width 0.3s ease;
+}
+
+/* A linha cresce no Hover */
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Section (Introdução) --- */
+.hero {
+    /* Ocupa no mínimo 80% da altura da tela, garantindo muito espaço em branco (respiro) */
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 0 2%; /* Alinhado com o ajuste de 2% que fizemos no cabeçalho */
+    max-width: 1000px; /* Evita que a linha de texto fique longa demais em telas gigantes */
+}
+
+.saudacao {
+    color: var(--cor-foco); /* Usa aquele Azul Indigo que definimos */
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.titulo-principal {
+    font-size: 5rem; /* Nome bem grande para impacto */
+    color: var(--cor-texto);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    font-size: 3.5rem; /* Subtítulo um pouco menor */
+    color: var(--cor-texto-claro);
+    margin-bottom: 1.5rem;
+}
+
+.descricao {
+    color: var(--cor-texto-claro);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px; 
+    margin-bottom: 3rem;
+}
+
+/* --- Botões da Hero Section --- */
+.botoes {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 4px; 
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+/* Botão principal com fundo sólido */
+.btn-primario {
+    background-color: var(--cor-foco);
+    color: #ffffff; 
+    border: 2px solid var(--cor-foco);
+}
+
+.btn-primario:hover {
+    background-color: transparent; 
+    color: var(--cor-foco);
+}
+
+/* Botão secundário vazado (fantasma) */
+.btn-secundario {
+    background-color: transparent;
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-texto-claro);
+}
+
+.btn-secundario:hover {
+    border-color: var(--cor-foco);
+    color: var(--cor-foco);
+}
