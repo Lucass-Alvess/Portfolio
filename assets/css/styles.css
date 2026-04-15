@@ -63,7 +63,14 @@ body {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    padding: 2rem 5%; 
+    padding: 1.5rem 2%; /* Diminuí um pouco o padding vertical para o menu não ocupar muita tela ao rolar */
+    
+    /* --- Regras para fixar o menu --- */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que o menu fique sempre por cima de tudo */
+    background-color: var(--cor-fundo); /* Fundo sólido para o conteúdo não misturar ao rolar */
+    /* -------------------------------- */
 }
 
 .logo a {
@@ -309,6 +316,66 @@ input:checked + .theme-slider:before {
 }
 
 /* =========================================
+   7. SEÇÃO: PORTFÓLIO
+========================================= */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+
+.projeto-card {
+    border: 1px solid var(--cor-texto-claro);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-foco);
+}
+
+.projeto-titulo {
+    font-size: 1.4rem;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+}
+
+.projeto-descricao {
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; 
+}
+
+.projeto-tags {
+    margin-bottom: 2rem; 
+}
+
+.projeto-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.link-projeto {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.link-projeto:hover {
+    color: var(--cor-foco);
+}
+
+/* =========================================
    6. RESPONSIVIDADE (MOBILE)
 ========================================= */
 @media (max-width: 768px) {
@@ -316,4 +383,28 @@ input:checked + .theme-slider:before {
         grid-template-columns: 1fr; 
         gap: 2rem;
     }
+}
+
+/* =========================================
+   8. BARRA DE ROLAGEM (ESTILO CLÁSSICO CUSTOMIZADO)
+========================================= */
+
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--cor-fundo); 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-texto-claro); 
+    border-radius: 10px; 
+    
+    border: 3px solid var(--cor-fundo); 
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--cor-foco);
 }
