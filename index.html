@@ -13,14 +13,19 @@
         <a href="#">Lucas Alves</a> 
     </div>
     
-   <nav class="navegacao">
+  <nav class="navegacao">
     <ul class="menu">
         <li><a href="#sobre">Sobre Mim</a></li>
         <li><a href="#formacao">Formação</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li>
-            <button id="theme-button" class="theme-toggle">🌙 Tema</button>
+        
+        <li class="theme-switch-wrapper">
+            <span id="theme-icon" class="theme-icon">☀️</span>
+            <label class="theme-switch" for="checkbox-tema">
+                <input type="checkbox" id="checkbox-tema">
+                <div class="theme-slider"></div>
+            </label>
         </li>
     </ul>
 </nav>
@@ -28,10 +33,10 @@
 </header>
 
     <main>
+
     <section id="sobre" class="hero">
-        <span class="saudacao">Olá, eu sou o</span>
         
-        <h1 class="titulo-principal">Lucas.</h1>
+        <h1 class="titulo-principal">Lucas Alves</h1>
         <h2 class="subtitulo">Desenvolvedor de Software.</h2>
         
         <p class="descricao">
@@ -46,6 +51,54 @@
             <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
         </div>
     </section>
+
+
+    <section id="formacao" class="secao">
+        <h2 class="titulo-secao">Formação & Habilidades</h2>
+        
+        <div class="formacao-container">
+            <div class="coluna-texto">
+                <h3 class="subtitulo-secao">Acadêmico</h3>
+                <div class="item-formacao">
+                    <h4>Ciência da Computação</h4>
+                    <span class="periodo">Cursando - 3º Semestre</span>
+                    <p>Foco em engenharia de software e desenvolvimento de sistemas escaláveis.</p>
+                </div>
+
+                <h3 class="subtitulo-secao">Cursos</h3>
+                <div class="item-formacao">
+                    <h4>Desenvolvimento Full-Stack</h4>
+                    <span class="periodo">Certificações Complementares</span>
+                    <p>Cursos focados em Spring Boot, React, Docker e boas práticas de desenvolvimento (Clean Code).</p>
+                </div>
+
+                <h3 class="subtitulo-secao">Idiomas</h3>
+                <div class="item-formacao">
+                    <h4>Inglês</h4>
+                    <span class="periodo">Intermediário</span>
+                    <p>Leitura técnica de documentações e comunicação funcional para o ambiente de tecnologia.</p>
+                </div>
+            </div>
+
+            <div class="coluna-habilidades">
+                <h3 class="subtitulo-secao">Tecnologias</h3>
+                
+                <div class="lista-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">HTML & CSS</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </main>
 
     <script src="./assets/js/scripts.js"></script>

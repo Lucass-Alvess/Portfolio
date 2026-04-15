@@ -1,58 +1,23 @@
-/* --- Variáveis do Sistema --- */
+/* =========================================
+   1. VARIÁVEIS DO SISTEMA
+========================================= */
 :root {
     --cor-foco: #4338ca; 
-    --cor-fundo: #fdfaf6; /* Um "creme" ou areia super sutil */
-    --cor-texto: #2d2a26; /* Cinza quente e escuro */
-    --cor-texto-claro: #73706c; /* Cinza quente claro */
+    --cor-fundo: #fdfaf6; 
+    --cor-texto: #2d2a26; 
+    --cor-texto-claro: #73706c; 
 }
 
-
-/* Quando o body tiver a classe .dark-theme, as variáveis mudam */
 body.dark-theme {
-    /* Estilo 3: Dark Mode */
     --cor-fundo: #121212;
     --cor-texto: #f1f5f9;
     --cor-texto-claro: #94a3b8;
     --cor-foco: #818cf8;
 }
 
-/* --- Estilo do Botão de Tema (Minimalista) --- */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--cor-texto-claro);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative; /* Necessário para a linha animada */
-    transition: color 0.3s ease;
-    font-family: inherit; /* Puxa a mesma fonte do menu */
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Espaço entre o ícone e o texto */
-}
-
-.theme-toggle:hover {
-    color: var(--cor-foco);
-}
-
-/* Adicionando a mesma linha animada dos links */
-.theme-toggle::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--cor-foco);
-    transition: width 0.3s ease;
-}
-
-.theme-toggle:hover::after {
-    width: 100%;
-}
-
-/* --- Reset Básico e Fonte --- */
+/* =========================================
+   2. RESET E ESTILOS GLOBAIS
+========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -63,9 +28,37 @@ body.dark-theme {
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave na troca de tema */
 }
 
-/* --- Estilo do Cabeçalho --- */
+/* Estilo padrão para todas as seções */
+.secao {
+    padding: 6rem 2%; 
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: var(--cor-texto);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background-color: var(--cor-foco);
+}
+
+/* =========================================
+   3. CABEÇALHO E MENU
+========================================= */
 .cabecalho {
     display: flex;
     justify-content: space-between; 
@@ -73,13 +66,11 @@ body {
     padding: 2rem 5%; 
 }
 
-/* --- Estilo da Logo --- */
 .logo a {
     text-decoration: none;
-    color: var(--cor-texto-claro); /* Usando um cinza mais suave em vez do texto escuro */
+    color: var(--cor-texto-claro); 
     font-size: 1.2rem; 
     font-weight: 500; 
-    letter-spacing: normal;
     transition: color 0.3s ease; 
 }
 
@@ -87,14 +78,12 @@ body {
     color: var(--cor-foco);
 }
 
-/* --- Estilo do Menu de Navegação --- */
 .menu {
     list-style: none; 
     display: flex;
     gap: 2.5rem; 
 }
 
-/* --- Estilo dos Links do Menu --- */
 .menu a {
     text-decoration: none;
     color: var(--cor-texto-claro);
@@ -104,12 +93,10 @@ body {
     transition: color 0.3s ease; 
 }
 
-/* Efeito Hover (Mouse em cima) - Cor da fonte */
 .menu a:hover {
     color: var(--cor-foco); 
 }
 
-/* Criando a linha animada embaixo do link */
 .menu a::after {
     content: '';
     position: absolute;
@@ -121,39 +108,97 @@ body {
     transition: width 0.3s ease;
 }
 
-/* A linha cresce no Hover */
 .menu a:hover::after {
     width: 100%;
 }
 
-/* --- Hero Section (Introdução) --- */
+/* --- Botão Interruptor de Tema --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.theme-icon {
+    font-size: 1.2rem; 
+    min-width: 25px; 
+    text-align: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #d1d5db; 
+    transition: 0.4s ease;
+    border-radius: 30px;
+}
+
+.theme-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff; 
+    transition: 0.4s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+}
+
+input:checked + .theme-slider {
+    background-color: var(--cor-foco); 
+}
+
+input:checked + .theme-slider:before {
+    transform: translateX(22px);
+    background-color: var(--cor-fundo); 
+    box-shadow: none; 
+}
+
+/* =========================================
+   4. SEÇÃO: HERO (INTRODUÇÃO)
+========================================= */
 .hero {
-    /* Ocupa no mínimo 80% da altura da tela, garantindo muito espaço em branco (respiro) */
     min-height: 80vh; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    padding: 0 2%; /* Alinhado com o ajuste de 2% que fizemos no cabeçalho */
-    max-width: 1000px; /* Evita que a linha de texto fique longa demais em telas gigantes */
+    justify-content: center; 
+    padding: 0 2%; 
+    max-width: 1000px; 
 }
 
 .saudacao {
-    color: var(--cor-foco); /* Usa aquele Azul Indigo que definimos */
-    font-size: 1.1rem;
+    color: var(--cor-foco); 
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
     letter-spacing: 1px;
 }
 
 .titulo-principal {
-    font-size: 5rem; /* Nome bem grande para impacto */
+    font-size: 5rem; 
     color: var(--cor-texto);
     line-height: 1;
     margin-bottom: 0.5rem;
 }
 
 .subtitulo {
-    font-size: 3.5rem; /* Subtítulo um pouco menor */
+    font-size: 3.5rem; 
     color: var(--cor-texto-claro);
     margin-bottom: 1.5rem;
 }
@@ -166,7 +211,6 @@ body {
     margin-bottom: 3rem;
 }
 
-/* --- Botões da Hero Section --- */
 .botoes {
     display: flex;
     gap: 1.5rem;
@@ -181,7 +225,6 @@ body {
     font-size: 1rem;
 }
 
-/* Botão principal com fundo sólido */
 .btn-primario {
     background-color: var(--cor-foco);
     color: #ffffff; 
@@ -193,7 +236,6 @@ body {
     color: var(--cor-foco);
 }
 
-/* Botão secundário vazado (fantasma) */
 .btn-secundario {
     background-color: transparent;
     color: var(--cor-texto);
@@ -203,4 +245,75 @@ body {
 .btn-secundario:hover {
     border-color: var(--cor-foco);
     color: var(--cor-foco);
+}
+
+/* =========================================
+   5. SEÇÃO: FORMAÇÃO & HABILIDADES
+========================================= */
+.formacao-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem; 
+}
+
+.subtitulo-secao {
+    font-size: 1.5rem;
+    color: var(--cor-texto);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.item-formacao {
+    margin-bottom: 2.5rem;
+}
+
+.item-formacao h4 {
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    margin-bottom: 0.3rem;
+}
+
+.item-formacao .periodo {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--cor-foco);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.item-formacao p {
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+}
+
+.lista-tags {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+.tag {
+    padding: 8px 16px;
+    border: 1px solid var(--cor-texto-claro);
+    color: var(--cor-texto-claro);
+    border-radius: 20px; 
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: default; 
+}
+
+.tag:hover {
+    border-color: var(--cor-foco);
+    color: var(--cor-foco);
+    background-color: rgba(67, 56, 202, 0.05); 
+}
+
+/* =========================================
+   6. RESPONSIVIDADE (MOBILE)
+========================================= */
+@media (max-width: 768px) {
+    .formacao-container {
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+    }
 }
