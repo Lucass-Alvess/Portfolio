@@ -3,187 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
+    <title>Portfólio | Lucas Alves</title>
     
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
     <header class="cabecalho">
-    <div class="logo">
-        <a href="#">Lucas Alves</a> 
-    </div>
-    
-  <nav class="navegacao">
-    <ul class="menu">
-        <li><a href="#sobre">Sobre Mim</a></li>
-        <li><a href="#formacao">Formação</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <div class="logo">
+            <a href="#">Lucas Alves</a> 
+        </div>
         
-        <li class="theme-switch-wrapper">
-            <span id="theme-icon" class="theme-icon">☀️</span>
-            <label class="theme-switch" for="checkbox-tema">
-                <input type="checkbox" id="checkbox-tema">
-                <div class="theme-slider"></div>
-            </label>
-        </li>
-    </ul>
-</nav>
-
-</header>
+        <nav class="navegacao">
+            <ul class="menu">
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+                
+                <li class="theme-switch-wrapper">
+                    <span id="theme-icon" class="theme-icon">☀️</span>
+                    <label class="theme-switch" for="checkbox-tema">
+                        <input type="checkbox" id="checkbox-tema">
+                        <div class="theme-slider"></div>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
+        <section id="sobre" class="hero">
+            <h1 class="titulo-principal">Lucas Alves</h1>
+            <h2 class="subtitulo">Desenvolvedor de Software</h2>
+            
+            <p class="descricao">
+                Focado em criar soluções eficientes e escaláveis. 
+                Tenho experiência em bancos de dados e no desenvolvimento 
+                de aplicações utilizando o ecossistema Java com Spring para o backend, 
+                e interfaces modernas em React.
+            </p>
+            
+            <div class="botoes">
+                <a href="#portfolio" class="btn btn-primario">Ver meus projetos</a>
+                <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
+            </div>
+        </section>
 
-    <section id="sobre" class="hero">
-        
-        <h1 class="titulo-principal">Lucas Alves</h1>
-        <h2 class="subtitulo">Desenvolvedor de Software.</h2>
-        
-        <p class="descricao">
-            Focado em criar soluções eficientes e escaláveis. 
-            Tenho experiência na modelagem de bancos de dados e no desenvolvimento 
-            de aplicações utilizando o ecossistema Java com Spring para o backend, 
-            e interfaces modernas em React.
-        </p>
-        
-        <div class="botoes">
-            <a href="#portfolio" class="btn btn-primario">Ver meus projetos</a>
-            <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
-        </div>
-    </section>
+        <section id="formacao" class="secao">
+            <h2 class="titulo-secao">Formação & Habilidades</h2>
+            
+            <div class="formacao-container">
+                <div class="coluna-texto">
+                    <h3 class="subtitulo-secao">Acadêmico</h3>
+                    <div class="item-formacao">
+                        <h4>Ciência da Computação</h4>
+                        <span class="periodo">Cursando - 3º Semestre</span>
+                        <p>Foco em engenharia de software e desenvolvimento de sistemas escaláveis.</p>
+                    </div>
 
+                    <h3 class="subtitulo-secao">Cursos</h3>
+                    <div class="item-formacao">
+                        <h4>Desenvolvimento Full-Stack</h4>
+                        <span class="periodo">Certificações Complementares</span>
+                        <p>Cursos focados em Spring Boot, React, Docker e boas práticas de desenvolvimento (Clean Code).</p>
+                    </div>
 
-    <section id="formacao" class="secao">
-        <h2 class="titulo-secao">Formação & Habilidades</h2>
-        
-        <div class="formacao-container">
-            <div class="coluna-texto">
-                <h3 class="subtitulo-secao">Acadêmico</h3>
-                <div class="item-formacao">
-                    <h4>Ciência da Computação</h4>
-                    <span class="periodo">Cursando - 3º Semestre</span>
-                    <p>Foco em engenharia de software e desenvolvimento de sistemas escaláveis.</p>
+                    <h3 class="subtitulo-secao">Idiomas</h3>
+                    <div class="item-formacao">
+                        <h4>Inglês</h4>
+                        <span class="periodo">Intermediário</span>
+                        <p>Leitura técnica de documentações e comunicação funcional para o ambiente de tecnologia.</p>
+                    </div>
                 </div>
 
-                <h3 class="subtitulo-secao">Cursos</h3>
-                <div class="item-formacao">
-                    <h4>Desenvolvimento Full-Stack</h4>
-                    <span class="periodo">Certificações Complementares</span>
-                    <p>Cursos focados em Spring Boot, React, Docker e boas práticas de desenvolvimento (Clean Code).</p>
-                </div>
-
-                <h3 class="subtitulo-secao">Idiomas</h3>
-                <div class="item-formacao">
-                    <h4>Inglês</h4>
-                    <span class="periodo">Intermediário</span>
-                    <p>Leitura técnica de documentações e comunicação funcional para o ambiente de tecnologia.</p>
+                <div class="coluna-habilidades">
+                    <h3 class="subtitulo-secao">Tecnologias</h3>
+                    <div class="lista-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">HTML & CSS</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Git & GitHub</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Linux</span>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="coluna-habilidades">
-                <h3 class="subtitulo-secao">Tecnologias</h3>
+        <section id="portfolio" class="secao">
+            <h2 class="titulo-secao">Portfólio</h2>
+            
+            <div class="portfolio-grid">
+                <article class="projeto-card">
+                    <h3 class="projeto-titulo">Medication Controller</h3>
+                    <p class="projeto-descricao">
+                        Uma API RESTful para rastreamento e gerenciamento de horários de medicações. 
+                        Desenvolvido com arquitetura em camadas, mapeamento objeto-relacional (JPA/Hibernate) 
+                        e scripts de execução DDL.
+                    </p>
+                    <div class="lista-tags projeto-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">React</span>
+                    </div>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Lucass-Alvess/medication-controller" class="link-projeto" target="_blank">↗ Repositório</a>
+                    </div>
+                </article>
+
+                <article class="projeto-card">
+                    <h3 class="projeto-titulo">Portfólio Minimalista</h3>
+                    <p class="projeto-descricao">
+                        Interface web responsiva com foco em performance e design minimalista. 
+                        Possui sistema de troca de temas (Light/Dark Mode) nativo manipulando o DOM diretamente 
+                        e armazenamento de preferências no navegador.
+                    </p>
+                    <div class="lista-tags projeto-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Lucass-Alvess/Portfolio" class="link-projeto" target="_blank">↗ Repositório</a>
+                    </div>
+                </article>
                 
-                <div class="lista-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">React</span>
-                    <span class="tag">HTML & CSS</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">Git & GitHub</span>
-                    <span class="tag">Docker</span>
-                    <span class="tag">Linux</span>
-                </div>
+                <article class="projeto-card">
+                    <h3 class="projeto-titulo">DSCommerce</h3>
+                    <p class="projeto-descricao">
+                       API REST de um sistema de e-commerce, desenvolvido para estudo e prática de Java com Spring Boot.
+                    </p>
+                    <div class="lista-tags projeto-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Lucass-Alvess/dscommerce" class="link-projeto" target="_blank">↗ Repositório</a>
+                    </div>
+                </article>
+
+                <article class="projeto-card">
+                    <h3 class="projeto-titulo">DScatalog</h3>
+                    <p class="projeto-descricao">
+                        API REST de um sistema de e-commerce, desenvolvido para estudo e prática de Java com Spring Boot e testes automatizados
+                    </p>
+                    <div class="lista-tags projeto-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Testes automatizados</span>
+                    </div>
+                    <div class="projeto-links">
+                        <a href="https://github.com/Lucass-Alvess/dscatalog" class="link-projeto" target="_blank">↗ Repositório</a>
+                    </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <section id="portfolio" class="secao">
-        <h2 class="titulo-secao">Portfólio</h2>
-        
-        <div class="portfolio-grid">
-            <article class="projeto-card">
-                <h3 class="projeto-titulo">Medication Controller</h3>
-                <p class="projeto-descricao">
-                    Uma API RESTful para rastreamento e gerenciamento de horários de medicações. 
-                    Desenvolvido com arquitetura em camadas, mapeamento objeto-relacional (JPA/Hibernate) 
-                    e scripts de execução DDL.
-                </p>
-                
-                <div class="lista-tags projeto-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">PostgreSQL</span>
-                    <span class="tag">React</span>
-                </div>
-                
-                <div class="projeto-links">
-                    <a href="https://github.com/Lucass-Alvess/medication-controller" class="link-projeto" target="_blank">↗ Repositório</a>
-                    <!-- <a href="#" class="link-projeto" target="_blank">↗ Ver ao vivo</a> -->
-                </div>
-            </article>
-
-            <article class="projeto-card">
-                <h3 class="projeto-titulo">Portfólio Minimalista</h3>
-                <p class="projeto-descricao">
-                    Interface web responsiva com foco em performance e design minimalista. 
-                    Possui sistema de troca de temas (Light/Dark Mode) nativo manipulando o DOM diretamente 
-                    e armazenamento de preferências no navegador.
-                </p>
-                
-                <div class="lista-tags projeto-tags">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">JavaScript</span>
-                </div>
-                
-                <div class="projeto-links">
-                    <a href="https://github.com/Lucass-Alvess/Portfolio" class="link-projeto" target="_blank">↗ Repositório</a>
-                </div>
-            </article>
+        <section id="contato" class="secao">
+            <h2 class="titulo-secao">Contato</h2>
             
-            <article class="projeto-card">
-                <h3 class="projeto-titulo">DSCommerce</h3>
-                <p class="projeto-descricao">
-                   API REST de um sistema de e-commerce, desenvolvido para estudo e prática de Java com Spring Boot, no curso Java Spring da DevSuperior.
-                </p>
-                
-                <div class="lista-tags projeto-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Spring Boot</span>
-                    <span class="tag">PostgreSQL</span>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <h3 class="subtitulo-secao">Vamos conversar?</h3>
+                    <p class="contato-descricao">
+                        Estou sempre aberto a novas oportunidades ou apenas um bate-papo sobre tecnologia. Sinta-se à vontade para me mandar uma mensagem!
+                    </p>
+                    
+                    <div class="contato-links-diretos">
+                        <a href="mailto:lucas_oliveira-01@outlook.com" class="link-direto">✉️lucas_oliveira-01@outlook.com</a>
+                        <a href="https://www.linkedin.com/in/lucasalves-/" target="_blank" class="link-direto">💼 LinkedIn</a>
+                        <a href="https://github.com/Lucass-Alvess" target="_blank" class="link-direto">🐙 GitHub</a>
+                    </div>
                 </div>
-                
-                <div class="projeto-links">
-                    <a href="https://github.com/Lucass-Alvess/dscommerce" class="link-projeto" target="_blank">↗ Repositório</a>
-                </div>
-            </article>
 
-            <article class="projeto-card">
-                <h3 class="projeto-titulo">Algoritmos & DSA</h3>
-                <p class="projeto-descricao">
-                    Repositório dedicado ao estudo e resolução de problemas clássicos de Estrutura de Dados 
-                    e Algoritmos, incluindo listas encadeadas, recursão e a técnica de Two Pointers.
-                </p>
-                
-                <div class="lista-tags projeto-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Lógica</span>
-                    <span class="tag">Big O</span>
-                </div>
-                
-                <div class="projeto-links">
-                    <a href="#" class="link-projeto" target="_blank">↗ Repositório</a>
-                </div>
-            </article>
-            
-        </div>
-    </section>
-    
-</main>
+                <form action="https://formspree.io/f/xpqkpkav" method="POST" class="contato-form">
+                    <div class="input-grupo">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    
+                    <div class="input-grupo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    
+                    <div class="input-grupo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como posso ajudar?" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primario">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
+    <footer class="rodape">
+        <p>Desenvolvido por Lucas</p>
+        <p class="copyright">© 2026 Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="fab-topo" class="fab" title="Voltar ao topo">↑</button>
+    <div id="notificacao" class="notificacao"></div>
 
     <script src="./assets/js/scripts.js"></script>
 </body>

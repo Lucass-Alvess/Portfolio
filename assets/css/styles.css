@@ -18,6 +18,21 @@ body.dark-theme {
 /* =========================================
    2. RESET E ESTILOS GLOBAIS
 ========================================= */
+html {
+    scroll-behavior: smooth;
+    
+
+    scroll-padding-top: 100px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -63,14 +78,11 @@ body {
     display: flex;
     justify-content: space-between; 
     align-items: center; 
-    padding: 1.5rem 2%; /* Diminuí um pouco o padding vertical para o menu não ocupar muita tela ao rolar */
+    padding: 1.5rem 2%; 
     
-    /* --- Regras para fixar o menu --- */
     position: sticky;
     top: 0;
-    z-index: 1000; /* Garante que o menu fique sempre por cima de tudo */
-    background-color: var(--cor-fundo); /* Fundo sólido para o conteúdo não misturar ao rolar */
-    /* -------------------------------- */
+    z-index: 1000; 
 }
 
 .logo a {
@@ -407,4 +419,194 @@ input:checked + .theme-slider:before {
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
     background-color: var(--cor-foco);
+}
+
+/* =========================================
+   9. SEÇÃO: CONTATO
+========================================= */
+.contato-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contato-descricao {
+    color: var(--cor-texto-claro);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contato-links-diretos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link-direto {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.link-direto:hover {
+    color: var(--cor-foco);
+}
+
+/* --- Estilo do Formulário Minimalista --- */
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-grupo label {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+/* Estilo unificado para Input e Textarea */
+.input-grupo input,
+.input-grupo textarea {
+    padding: 1rem;
+    background-color: transparent; /* Fundo transparente acompanha o tema */
+    border: 1px solid var(--cor-texto-claro);
+    border-radius: 4px;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Remove a borda padrão agressiva do navegador ao clicar */
+.input-grupo input:focus,
+.input-grupo textarea:focus {
+    outline: none;
+    border-color: var(--cor-foco);
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1); /* Brilho suave da cor foco */
+}
+
+/* =========================================
+   10. RODAPÉ (FOOTER)
+========================================= */
+.rodape {
+    text-align: center;
+    padding: 3rem 2%;
+    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Linha divisória super sutil */
+    margin-top: 2rem;
+}
+
+/* No modo escuro, a linha divisória precisa ficar clara */
+body.dark-theme .rodape {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rodape p {
+    color: var(--cor-texto);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.rodape .copyright {
+    color: var(--cor-texto-claro);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* =========================================
+   11. NOTIFICAÇÕES E VALIDAÇÕES (TOAST)
+========================================= */
+.notificacao {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px); /* Começa escondido para baixo */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    pointer-events: none; /* Impede que atrapalhe cliques no site */
+}
+
+/* Classe adicionada pelo JS para fazer a notificação subir e aparecer */
+.notificacao.mostrar {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* Cores de status */
+.notificacao.sucesso {
+    background-color: #10b981; /* Verde esmeralda */
+}
+
+.notificacao.erro {
+    background-color: #ef4444; /* Vermelho rubi */
+}
+
+/* Impede que o layout do botão quebre enquanto a mensagem é enviada */
+.btn-primario:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+    .contato-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   12. BOTÃO FLUTUANTE (VOLTAR AO TOPO)
+========================================= */
+.fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--cor-foco);
+    color: #ffffff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    
+    /* Começa escondido e um pouco mais para baixo */
+    opacity: 0;
+    pointer-events: none; 
+    transform: translateY(20px); 
+    transition: all 0.3s ease;
+}
+
+/* Classe ativada pelo JavaScript para ele aparecer */
+.fab.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.fab:hover {
+    background-color: var(--cor-texto);
+    transform: translateY(-5px); /* Dá um pequeno pulo ao passar o mouse */
 }
