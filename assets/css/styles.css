@@ -46,6 +46,11 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave na troca de tema */
 }
 
+main {
+    position: relative;
+    z-index: 1; 
+}
+
 /* Estilo padrão para todas as seções */
 .secao {
     padding: 6rem 2%; 
@@ -458,7 +463,6 @@ input:checked + .theme-slider:before {
     color: var(--cor-foco);
 }
 
-/* --- Estilo do Formulário Minimalista --- */
 .contato-form {
     display: flex;
     flex-direction: column;
@@ -477,11 +481,10 @@ input:checked + .theme-slider:before {
     font-weight: 500;
 }
 
-/* Estilo unificado para Input e Textarea */
 .input-grupo input,
 .input-grupo textarea {
     padding: 1rem;
-    background-color: transparent; /* Fundo transparente acompanha o tema */
+    background-color: transparent;
     border: 1px solid var(--cor-texto-claro);
     border-radius: 4px;
     color: var(--cor-texto);
@@ -490,12 +493,11 @@ input:checked + .theme-slider:before {
     transition: all 0.3s ease;
 }
 
-/* Remove a borda padrão agressiva do navegador ao clicar */
 .input-grupo input:focus,
 .input-grupo textarea:focus {
     outline: none;
     border-color: var(--cor-foco);
-    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1); /* Brilho suave da cor foco */
+    box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1); 
 }
 
 /* =========================================
@@ -504,11 +506,10 @@ input:checked + .theme-slider:before {
 .rodape {
     text-align: center;
     padding: 3rem 2%;
-    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Linha divisória super sutil */
+    border-top: 1px solid rgba(0, 0, 0, 0.05); 
     margin-top: 2rem;
 }
 
-/* No modo escuro, a linha divisória precisa ficar clara */
 body.dark-theme .rodape {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -532,7 +533,7 @@ body.dark-theme .rodape {
     position: fixed;
     bottom: 2rem;
     left: 50%;
-    transform: translateX(-50%) translateY(100px); /* Começa escondido para baixo */
+    transform: translateX(-50%) translateY(100px); 
     padding: 1rem 2rem;
     border-radius: 8px;
     color: #ffffff;
@@ -542,10 +543,9 @@ body.dark-theme .rodape {
     transition: all 0.3s ease;
     z-index: 2000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    pointer-events: none; /* Impede que atrapalhe cliques no site */
+    pointer-events: none;
 }
 
-/* Classe adicionada pelo JS para fazer a notificação subir e aparecer */
 .notificacao.mostrar {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
@@ -553,14 +553,13 @@ body.dark-theme .rodape {
 
 /* Cores de status */
 .notificacao.sucesso {
-    background-color: #10b981; /* Verde esmeralda */
+    background-color: #10b981; 
 }
 
 .notificacao.erro {
-    background-color: #ef4444; /* Vermelho rubi */
+    background-color: #ef4444; 
 }
 
-/* Impede que o layout do botão quebre enquanto a mensagem é enviada */
 .btn-primario:disabled {
     opacity: 0.7;
     cursor: not-allowed;
@@ -592,14 +591,12 @@ body.dark-theme .rodape {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     
-    /* Começa escondido e um pouco mais para baixo */
     opacity: 0;
     pointer-events: none; 
     transform: translateY(20px); 
     transition: all 0.3s ease;
 }
 
-/* Classe ativada pelo JavaScript para ele aparecer */
 .fab.mostrar {
     opacity: 1;
     pointer-events: auto;
@@ -608,7 +605,7 @@ body.dark-theme .rodape {
 
 .fab:hover {
     background-color: var(--cor-texto);
-    transform: translateY(-5px); /* Dá um pequeno pulo ao passar o mouse */
+    transform: translateY(-5px); 
 }
 
 /* =========================================
@@ -616,7 +613,7 @@ body.dark-theme .rodape {
 ========================================= */
 .oculto {
     opacity: 0;
-    transform: translateY(30px); /* Começa um pouco para baixo */
+    transform: translateY(30px); 
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
@@ -649,7 +646,6 @@ body.dark-theme .rodape {
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* O círculo que gira */
 .spinner {
     width: 40px;
     height: 40px;
@@ -667,4 +663,116 @@ body.dark-theme .rodape {
 .preloader.escondido {
     opacity: 0;
     visibility: hidden;
+}
+
+/* =========================================
+   16. RESPONSIVIDADE (MOBILE & TABLET)
+========================================= */
+
+/* --- 1. Botão Hambúrguer (Escondido no PC) --- */
+.menu-mobile-btn {
+    display: none; 
+    width: 45px; 
+    height: 45px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0; 
+    position: relative;
+    z-index: 100000; 
+}
+
+.menu-mobile-btn .linha {
+    display: block;
+    width: 28px; 
+    height: 3px;
+    background-color: var(--cor-texto);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 3px; 
+}
+
+/* --- 2. REGRAS EXCLUSIVAS PARA CELULAR E TABLET --- */
+@media (max-width: 768px) {
+    
+    .cabecalho {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        padding: 1.5rem 10px; 
+    }
+
+    .menu-mobile-btn {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px; 
+        margin-right: -5px;
+        width: 40px;
+    }
+
+    .menu-mobile-btn .linha {
+        margin: 0; 
+    }
+
+    /* A MÁGICA DO "X" PERFEITO */
+    .menu-mobile-btn.ativo .linha:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .menu-mobile-btn.ativo .linha:nth-child(2) {
+        opacity: 0; 
+        transform: scale(0); 
+    }
+    .menu-mobile-btn.ativo .linha:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 250px; 
+        height: 100vh;
+        background-color: var(--cor-fundo);
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease; 
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3); 
+        z-index: 99990; /* Fica logo abaixo do botão (100000) */
+    }
+
+    .menu.ativo {
+        right: 0; 
+    }
+
+    .secao { padding: 4rem 5%; }
+    .titulo-principal { font-size: 3rem; }
+    .subtitulo { font-size: 2rem; }
+    .descricao { font-size: 1rem; margin-bottom: 2rem; }
+    .titulo-secao { font-size: 2rem; }
+
+
+    .botoes {
+        flex-direction: column; 
+        gap: 1rem;
+    }
+    .btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .formacao-container,
+    .contato-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+
+    .notificacao {
+        width: 90%;
+        text-align: center;
+        padding: 1rem;
+    }
 }
