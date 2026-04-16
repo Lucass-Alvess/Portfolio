@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+    <div id="preloader" class="preloader">
+        <div class="spinner"></div>
+    </div>
     <header class="cabecalho">
         <div class="logo">
             <a href="#">Lucas Alves</a> 
@@ -32,13 +35,14 @@
     </header>
 
     <main>
+
         <section id="sobre" class="hero">
-            <h1 class="titulo-principal">Lucas Alves</h1>
-            <h2 class="subtitulo">Desenvolvedor de Software</h2>
+            <h1 id="titulo-digitando" class="titulo-principal"></h1>
+            <h2 id="subtitulo-digitando" class="subtitulo"></h2>
             
             <p class="descricao">
                 Focado em criar soluções eficientes e escaláveis. 
-                Tenho experiência em bancos de dados e no desenvolvimento 
+                Tenho experiência na modelagem de bancos de dados e no desenvolvimento 
                 de aplicações utilizando o ecossistema Java com Spring para o backend, 
                 e interfaces modernas em React.
             </p>
@@ -49,7 +53,7 @@
             </div>
         </section>
 
-        <section id="formacao" class="secao">
+        <section id="formacao" class="secao oculto">
             <h2 class="titulo-secao">Formação & Habilidades</h2>
             
             <div class="formacao-container">
@@ -94,7 +98,7 @@
             </div>
         </section>
 
-        <section id="portfolio" class="secao">
+        <section id="portfolio" class="secao oculto">
             <h2 class="titulo-secao">Portfólio</h2>
             
             <div class="portfolio-grid">
@@ -166,7 +170,7 @@
             </div>
         </section>
 
-        <section id="contato" class="secao">
+        <section id="contato" class="secao oculto">
             <h2 class="titulo-secao">Contato</h2>
             
             <div class="contato-container">

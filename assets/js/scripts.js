@@ -119,3 +119,87 @@ if (fabTopo) {
         });
     });
 }
+
+// =========================================
+// ANIMAÇÃO DE SCROLL (REVEAL)
+// =========================================
+
+// Cria o "olheiro" (Observer)
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('mostrar-scroll');
+            
+        } else {
+        
+            entry.target.classList.remove('mostrar-scroll');
+        }
+    });
+}, {
+    threshold: 0.1 
+});
+
+const elementosOcultos = document.querySelectorAll('.oculto');
+elementosOcultos.forEach((elemento) => myObserver.observe(elemento));
+
+// =========================================
+// EFEITO MÁQUINA DE ESCREVER (SUAVE)
+// =========================================
+const tituloElement = document.getElementById('titulo-digitando');
+const subtituloElement = document.getElementById('subtitulo-digitando');
+
+// Os textos que você quer que sejam digitados
+const textoTitulo = "Lucas Alves";
+const textoSubtitulo = "Desenvolvedor de Software";
+
+// Cria os cursores de digitação
+const cursor1 = document.createElement('span');
+cursor1.classList.add('cursor-pisca');
+
+const cursor2 = document.createElement('span');
+cursor2.classList.add('cursor-pisca');
+cursor2.style.backgroundColor = 'var(--cor-texto-claro)'; 
+
+let i = 0;
+let j = 0;
+
+function digitarSubtitulo() {
+    if (j === 0) {
+        cursor1.classList.add('cursor-escondido');
+        subtituloElement.appendChild(cursor2);
+    }
+
+    if (j < textoSubtitulo.length) {
+        cursor2.insertAdjacentText('beforebegin', textoSubtitulo.charAt(j));
+        j++;
+        setTimeout(digitarSubtitulo, 60); 
+    } else {
+        setTimeout(() => {
+            cursor2.classList.add('cursor-escondido');
+        }, 2000);
+    }
+}
+
+function digitarTitulo() {
+    if (i === 0) {
+        tituloElement.appendChild(cursor1);
+    }
+
+    if (i < textoTitulo.length) {
+        cursor1.insertAdjacentText('beforebegin', textoTitulo.charAt(i));
+        i++;
+        setTimeout(digitarTitulo, 120); 
+    } else {
+        setTimeout(digitarSubtitulo, 500); 
+    }
+}
+
+digitarTitulo();
+
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    
+    setTimeout(() => {
+        preloader.classList.add('escondido');
+    }, 500); 
+});
