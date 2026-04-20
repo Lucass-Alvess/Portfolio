@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+    
+    <!-- Menu -->
+
     <div id="preloader" class="preloader">
         <div class="spinner"></div>
     </div>
+
     <header class="cabecalho">
         <div class="logo">
             <a href="#">Lucas Alves</a> 
@@ -42,6 +46,8 @@
 
     <main>
 
+        <!-- Sobre -->
+
         <section id="sobre" class="hero">
             <h1 id="titulo-digitando" class="titulo-principal"></h1>
             <h2 id="subtitulo-digitando" class="subtitulo"></h2>
@@ -58,6 +64,8 @@
                 <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
             </div>
         </section>
+
+        <!-- Formação & Habilidades -->
 
         <section id="formacao" class="secao oculto">
             <h2 class="titulo-secao">Formação & Habilidades</h2>
@@ -104,6 +112,8 @@
             </div>
         </section>
 
+        <!-- Portfólio -->
+
         <section id="portfolio" class="secao oculto">
             <h2 class="titulo-secao">Portfólio</h2>
             
@@ -112,8 +122,7 @@
                     <h3 class="projeto-titulo">Medication Controller</h3>
                     <p class="projeto-descricao">
                         Uma API RESTful para rastreamento e gerenciamento de horários de medicações. 
-                        Desenvolvido com arquitetura em camadas, mapeamento objeto-relacional (JPA/Hibernate) 
-                        e scripts de execução DDL.
+                        Desenvolvido com arquitetura em camadas e JPA/Hibernate.
                     </p>
                     <div class="lista-tags projeto-tags">
                         <span class="tag">Java</span>
@@ -130,8 +139,7 @@
                     <h3 class="projeto-titulo">Portfólio Minimalista</h3>
                     <p class="projeto-descricao">
                         Interface web responsiva com foco em performance e design minimalista. 
-                        Possui sistema de troca de temas (Light/Dark Mode) nativo manipulando o DOM diretamente 
-                        e armazenamento de preferências no navegador.
+                        Sistema de troca de temas nativo em Vanilla JS.
                     </p>
                     <div class="lista-tags projeto-tags">
                         <span class="tag">HTML5</span>
@@ -146,7 +154,7 @@
                 <article class="projeto-card">
                     <h3 class="projeto-titulo">DSCommerce</h3>
                     <p class="projeto-descricao">
-                       API REST de um sistema de e-commerce, desenvolvido para estudo e prática de Java com Spring Boot.
+                       API REST de um sistema de e-commerce, focado em regras de negócio complexas.
                     </p>
                     <div class="lista-tags projeto-tags">
                         <span class="tag">Java</span>
@@ -161,13 +169,13 @@
                 <article class="projeto-card">
                     <h3 class="projeto-titulo">DScatalog</h3>
                     <p class="projeto-descricao">
-                        API REST de um sistema de e-commerce, desenvolvido para estudo e prática de Java com Spring Boot e testes automatizados
+                        API REST de e-commerce com foco em testes automatizados e integração contínua.
                     </p>
                     <div class="lista-tags projeto-tags">
                         <span class="tag">Java</span>
                         <span class="tag">Spring Boot</span>
                         <span class="tag">PostgreSQL</span>
-                        <span class="tag">Testes automatizados</span>
+                        <span class="tag">JUnit</span>
                     </div>
                     <div class="projeto-links">
                         <a href="https://github.com/Lucass-Alvess/dscatalog" class="link-projeto" target="_blank">↗ Repositório</a>
@@ -176,22 +184,24 @@
             </div>
         </section>
 
+        <!-- Contato -->
+
         <section id="contato" class="secao oculto">
             <h2 class="titulo-secao">Contato</h2>
             
             <div class="contato-container">
-                <div class="contato-info">
+                <address class="contato-info">
                     <h3 class="subtitulo-secao">Vamos conversar?</h3>
                     <p class="contato-descricao">
-                        Estou sempre aberto a novas oportunidades ou apenas um bate-papo sobre tecnologia. Sinta-se à vontade para me mandar uma mensagem!
+                        Estou sempre aberto a novas oportunidades ou apenas um bate-papo sobre tecnologia.
                     </p>
                     
                     <div class="contato-links-diretos">
-                        <a href="mailto:lucas_oliveira-01@outlook.com" class="link-direto">✉️lucas_oliveira-01@outlook.com</a>
+                        <a href="mailto:lucas_oliveira-01@outlook.com" class="link-direto">✉️Emai</a>
                         <a href="https://www.linkedin.com/in/lucasalves-/" target="_blank" class="link-direto">💼 LinkedIn</a>
                         <a href="https://github.com/Lucass-Alvess" target="_blank" class="link-direto">🐙 GitHub</a>
                     </div>
-                </div>
+                </address>
 
                 <form action="https://formspree.io/f/xpqkpkav" method="POST" class="contato-form">
                     <div class="input-grupo">
@@ -201,7 +211,7 @@
                     
                     <div class="input-grupo">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
                     </div>
                     
                     <div class="input-grupo">
@@ -215,8 +225,10 @@
         </section>
     </main>
 
+    <!-- Rodapé -->
+
     <footer class="rodape">
-        <p>Desenvolvido por Lucas</p>
+        <p>Desenvolvido por Lucas Alves</p>
         <p class="copyright">© 2026 Todos os direitos reservados.</p>
     </footer>
 
